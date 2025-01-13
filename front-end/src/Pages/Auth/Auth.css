@@ -1,0 +1,83 @@
+.form {
+  background-image: linear-gradient(
+      120deg,
+      white 0%,
+      white 50%,
+      transparent 50%
+    ),
+    url(./form.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 30rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+.form-custom {
+  position: relative;
+  margin-bottom: 20px;
+}
+.form-custom label,
+.form-custom input {
+  display: block;
+}
+
+.form-custom input {
+  padding: 20px 20px;
+  outline: none;
+  border-radius: 3px;
+  border: 0;
+  background-color: white;
+  width: 80%;
+  border-bottom: 3px solid transparent;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0 0 10px gray inset;
+}
+
+.form-custom input:focus {
+  box-shadow: 0 0 10px gray inset;
+}
+/* هاي الفالد انه صلاحيه تمام يعني الريكويرد معبى اللي طوله محدد وهكذا */
+.form-custom input:focus:valid {
+  border-bottom: 3px solid green;
+}
+.form-custom input:focus:not(:valid) {
+  border-bottom: 3px solid orangered;
+}
+/* هاي الخاصية يعني طالما في بليس هولدر يعني سواء مفش فوكس او في فوكس ومش كاتب لساك */
+.form-custom input:placeholder-shown + label {
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+  visibility: hidden;
+}
+.form-custom label {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: gray;
+  transition: 0.3s;
+}
+.custom-form {
+  width: 50%;
+}
+
+@media (max-width: 992px) {
+  .form {
+    background-image: linear-gradient(
+        rgba(238, 238, 238, 30%) 0%,
+        rgb(238, 238, 238, 30%) 100%
+      ),
+      url(./form.jpg);
+  }
+  .custom-form {
+    width: 100%;
+  }
+  .form-custom input {
+    width: 100%;
+  }
+}
